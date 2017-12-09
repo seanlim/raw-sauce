@@ -1,0 +1,17 @@
+#!/usr/local/bin/node
+
+const readfile = require('./readfile');
+const lexer = require('./lexer');
+const parser = require('./parser');
+const runtime = require('./runtime');
+
+try {
+  const path = process.argv[2];
+  const content = readfile(path);
+  const tokens = lexer(content);
+  const asts = parser(tokens);
+  runtime(asts);
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
