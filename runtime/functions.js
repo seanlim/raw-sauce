@@ -17,7 +17,7 @@ module.exports['='] = {
 }
 
 // Prints output to the console.
-module.exports.ITELLHER = {
+module.exports.TELLHER = {
   numArgs: 1,
   run: (ctx, [val]) => {
     console.log(val);
