@@ -1,0 +1,4 @@
+{
+  "PRINT": "ITELLHER",
+  "INPUT": "SENDMAN",
+}
