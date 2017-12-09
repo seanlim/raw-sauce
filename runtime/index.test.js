@@ -3,12 +3,12 @@ const runtime = require('./index');
 
 const stdout = require('test-console').stdout;
 
-const functions = require('../functions');
+const functions = require('./functions');
 
 test('prints to console correctly', (t) => {
   const ast = [
     {
-      value: functions.PRINT,
+      value: 'ITELLHER',
       args: [
         {
           value: '+',
@@ -22,6 +22,5 @@ test('prints to console correctly', (t) => {
     runtime(ast);
   });
 
-  console.log(output);
-  t.pass();
+  t.deepEqual(['3\n'], output);
 });
