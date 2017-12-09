@@ -17,18 +17,18 @@ test('skiddy pap boom parser', (t) => {
   
   // Expected
   const ast = [
-    {
-      value: 'ITELLHER',
-      args: [
-        {
-          value: '+',
-          args: [1, 2],
-        }
-      ],
-    }
+    [
+      {
+        value: 'ITELLHER',
+        args: [
+          {
+            value: '+',
+            args: [1, 2],
+          }
+        ],
+      }
+    ]
   ];
 
-  t.deepEqual(runtime(input), ast, 'Parse test passed');
-
-  t.pass();
+  t.deepEqual(runtime(input), ast, 'Failed');
 });
