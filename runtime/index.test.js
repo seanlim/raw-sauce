@@ -1,6 +1,8 @@
 const test = require('ava');
 const runtime = require('./index');
 
+const stdout = require('test-console').stdout;
+
 const functions = require('../functions');
 
 test('prints to console correctly', (t) => {
