@@ -1,0 +1,56 @@
+body {
+  background-color: teal;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size:  100px;
+  margin: 25px;
+}
+
+.shaq {
+  padding:  504x;
+  display: block;
+  margin: auto;
+  width: 25em;
+  height: 25em;
+  transition-duration: 2.0s;
+  border-radius: 50%;
+}
+
+.shaq:hover {
+  transform: rotate(720deg) scale(3,0.5);
+}
+
+.boom {
+  color: red;
+}
+
+.func {
+  color: blueviolet;
+}
+
+.code {
+  border-radius: 10px;
+  background-color: whitesmoke;
+  margin: auto;
+  color: black;
+  width: 60%;
+  padding: 30px;
+  text-align: left;
+  line-height: 40px;
+}
+
+h3 {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+  padding: 20px; 
+  font-size: 30px;
+}
+
+a {
+  color: yellow;
+}
