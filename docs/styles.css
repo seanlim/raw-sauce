@@ -38,9 +38,22 @@ h1 {
   margin: auto;
   color: black;
   width: 60%;
+  bottom: 10px;
   padding: 30px;
   text-align: left;
   line-height: 40px;
+  transition-duration: 0.3s;
+}
+
+.code:hover {
+  transform: scale(1.1,1.1) rotate(1deg);
+}
+
+.chart {
+  width: 40%;
+  margin: auto;
+  padding: 100px;
+  padding-top: 20px;
 }
 
 h3 {
