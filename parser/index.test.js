@@ -30,5 +30,5 @@ test('skiddy pap boom parser', (t) => {
     ]
   ];
 
-  t.deepEqual(runtime(input), ast, 'Failed');
+  t.deepEqual(runtime(input), ast);
 });

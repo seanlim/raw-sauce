@@ -10,8 +10,7 @@ module.exports = (statement, parsedArr) => {
     // Identifier
     parsedArr.push([
       identifierParser(statement)
-    ]
-    );
+    ]);
   }
   else if (statement[0][0] == tk.VARIABLE){
     // Variable Assignment

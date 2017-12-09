@@ -1,35 +1,21 @@
-const tk = require('../tokens');
-const nodeTemplate = require('./nodeTemplate');
-const statementParser = require('./statementParser');
-const identifierParser = require('./identifierParser');
+const tok = require('../tokens');
 
-var parsedArr
-
-module.exports = (tokens) => {
-
-  console.log(tokens);
-  // Abstract into statements
-  const statements = getStatements(tokens);
-  parsedArr = [];
-
-  // Each statement is either a Function or a Variable declaration
-  statements.forEach(statement => statementParser(statement, parsedArr));
-
-  return parsedArr;
-
+const parse = (statement, ast) => {
+  if (statement.length === 0) return ast;
+  return ast;
+  if (statement[0][0] === tok.IDENTIFIER) {
+  }
 };
 
-function getStatements(arr) {
-  // Retrieve statements
-  let array = [...arr]
-  let statements = []
-  
-  // Identify statements
-  arr.forEach(token => {
-    if (token == tk.STMT_END) {
-      // Slice and dice
-      statements.push(arr.slice(0, arr.indexOf(token)));
-    }
-  });
-  return statements;
+module.exports = (tokens) => {
+  return tokens
+    .reduce((acc, token) => {
+      if (token[0] !== tok.STMT_END) {
+        acc[acc.length - 1].push(token);
+      } else {
+        acc.push([]);
+      }
+      return acc;
+    }, [[]])
+    .map(parse);
 };
