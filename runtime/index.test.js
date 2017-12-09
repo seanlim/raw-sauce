@@ -1,7 +1,7 @@
 const test = require('ava');
 const runtime = require('./index');
 
-const functions = require('../functions.json');
+const functions = require('../functions');
 
 test('prints to console correctly', (t) => {
   const ast = [
