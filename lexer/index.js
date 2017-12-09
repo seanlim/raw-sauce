@@ -1,28 +1,41 @@
-const tokenType = require('../tokens.js')
+const tokenType = require('../tokens')
 module.exports = (content) => {
   let tokenized = []
   let checkString = content.trim();
-  let matchVal
+  let matchVal = undefined
   while(checkString) {
-    for (token of tokenDefnitions) {
+    for (token of tokenDefinitions) {
       matchVal = checkString.match(token.regex)
       if (matchVal) {
-        tokenized.push([token.type, matchVal[0].trim()])
-        checkString = checkString.substring(matchVal[0].length)
-      } else {
-      }
+        const result = matchVal[0].trim()
+        switch(token.type) {
+          case tokenType.NUMBER:
+            tokenized.push([token.type, parseInt(result)])
+            break;
+          case tokenType.STRING:
+            tokenized.push([token.type, result.substring(1, result.length - 1)])
+            break;
+          default: 
+            tokenized.push([token.type, result])
+            break;
+        }
+        checkString = checkString.substring(matchVal[0].length).trim()
+        break;
+      } 
+    }
+    if (!matchVal) {
+      throw new Error("ERROR: Lexer Error")
     }
   }
   return tokenized;
 };
-
 
 function TokenDefinition(type, regex){
   this.type = type;
   this.regex = regex;
 }
 
-const tokenDefnitions = [
+const tokenDefinitions = [
   new TokenDefinition(tokenType.OPEN_PAREN, /^\s*\(/),
   new TokenDefinition(tokenType.CLOSE_PAREN, /^\s*\)/),
   new TokenDefinition(tokenType.STRING, /^\s*"(.*?)"/ ),
