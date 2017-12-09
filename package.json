@@ -26,5 +26,8 @@
   "devDependencies": {
     "ava": "^0.24.0",
     "test-console": "^1.1.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   }
 }
