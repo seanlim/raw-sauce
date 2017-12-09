@@ -1,2 +1,2 @@
-module.exports = (path) => {
+module.exports = (content) => {
 };
