@@ -1,2 +1,3 @@
-module.exports = (path) => {
+require('../tokens.json')
+module.exports = (content) => {
 };
