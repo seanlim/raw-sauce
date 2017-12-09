@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/sean1188/raw-sauce#readme",
   "devDependencies": {
-    "ava": "^0.24.0"
+    "ava": "^0.24.0",
+    "test-console": "^1.1.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   }
 }

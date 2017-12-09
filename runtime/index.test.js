@@ -1,18 +1,36 @@
 const test = require('ava');
 const runtime = require('./index');
 
-const functions = require('../functions');
+const stdout = require('test-console').stdout;
+
+const functions = require('./functions');
 
 test('prints to console correctly', (t) => {
   const ast = [
     {
-      value: functions.PRINT,
+      value: 'TING',
+      args: [
+        'lol',
+      ],
+    },
+    {
+      value: '=',
+      args: [
+        'lol',
+        {
+          value: '+',
+          args: [ 1, 2 ],
+        },
+      ],
+    },
+    {
+      value: 'ITELLHER',
       args: [
         {
           value: '+',
           args: [
             1,
-            2,
+            { value: 'lol' },
           ],
         }
       ],
@@ -23,6 +41,5 @@ test('prints to console correctly', (t) => {
     runtime(ast);
   });
 
-  console.log(output);
-  t.pass();
+  t.deepEqual(['4\n'], output);
 });
