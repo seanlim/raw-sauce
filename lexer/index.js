@@ -1,4 +1,4 @@
-const tokens = require('../tokens.json')
+const tokens = require('../tokens.js')
 console.log(tokens)
 module.exports = (content) => {
 };
