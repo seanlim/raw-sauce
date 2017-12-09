@@ -9,6 +9,9 @@ TELLHER("Man's not hot!") BOOM
 console.log(lexer(code));
 
 // THE PARSER SHOULD'VE BEEN HERE, BUT IT DOESN'T WORK
+console.log();
+console.log('Parser don\'t work >:(');
+console.log();
 
 const ast = [
   {
