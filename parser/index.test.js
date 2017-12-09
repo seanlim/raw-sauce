@@ -6,7 +6,7 @@ const tokens = require('../tokens');
 test('skiddy pap boom parser', (t) => {
   // Input
   const input = [
-    [tokens.IDENTIFIER, 'PRINT'],
+    [tokens.IDENTIFIER, 'TELLHER'],
     [tokens.OPEN_PAREN],
     [tokens.NUMBER, '1'],
     [tokens.OPERATOR, '+'],
@@ -19,7 +19,7 @@ test('skiddy pap boom parser', (t) => {
   const ast = [
     [
       {
-        value: 'ITELLHER',
+        value: 'TELLHER',
         args: [
           {
             value: '+',

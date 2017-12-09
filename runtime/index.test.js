@@ -24,7 +24,7 @@ test('prints to console correctly', (t) => {
       ],
     },
     {
-      value: 'ITELLHER',
+      value: 'TELLHER',
       args: [
         {
           value: '+',
