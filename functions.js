@@ -1,4 +1,4 @@
-{
-  "PRINT": "ITELLHER",
-  "INPUT": "SENDMAN",
-}
+module.exports = {
+  PRINT: 'ITELLHER',
+  INPUT: 'SENDMAN',
+};

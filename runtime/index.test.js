@@ -10,10 +10,7 @@ test('prints to console correctly', (t) => {
       args: [
         {
           value: '+',
-          args: [
-            1,
-            2,
-          ],
+          args: [1, 2],
         }
       ],
     }
