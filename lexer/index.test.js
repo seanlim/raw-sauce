@@ -1,5 +1,6 @@
 const test = require('ava');
 const lexer = require('./index');
+const tokenType = require('../tokens.js')
 
 test('tokenize a program correctly', (t) => {
   const content = `
@@ -7,10 +8,10 @@ test('tokenize a program correctly', (t) => {
   `;
 
   t.deepEqual(lexer(content), [
-    ['IDENT', 'ITELLHER'],
-    ['OPEN_PAREN'],
-    ['STR', 'Man\'s not hot'],
-    ['CLOSE_PAREN'],
-    ['STMT_END'],
+    [tokenType.IDENTIFIER, 'ITELLHER'],
+    [tokenType.OPEN_PAREN, '('],
+    [tokenType.STRING, 'Man\'s not hot!']
+    [tokenType.CLOSE_PAREN, ')'],
+    [tokenType.STMT_END, 'BOOM']
   ]);
 });
